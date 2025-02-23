@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -21,6 +24,28 @@ public class User {
     private boolean isValid = false;
     @Column(name = "verificationCode")
     private String verificationCode;
+
+    @Column(name = "registerDate")
+    private LocalDateTime registerDate;
+
+    public LocalDateTime getVerificationDate() {
+        return verificationDate;
+    }
+
+    public void setVerificationDate(LocalDateTime verificationDate) {
+        this.verificationDate = verificationDate;
+    }
+
+    @Column(name = "verificationDate")
+    private LocalDateTime verificationDate;
+
+    public LocalDateTime getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(LocalDateTime registerDate) {
+        this.registerDate = registerDate;
+    }
 
     public int getId() {
         return id;
